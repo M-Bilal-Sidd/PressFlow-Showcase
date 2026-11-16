@@ -1,60 +1,131 @@
-# PressFlow — V2 Product Showcase
+<div align="center">
 
-### From quotation to payment.
+<img src="media/pressflow-logo.png" alt="PressFlow" width="280">
+
+# 🖨️ PressFlow — Print Business Management
+
+### From quotation to payment. One connected workflow.
+
 **Designed & developed by MBS**
 
-![PressFlow V2 product showcase](media/poster.png)
+![JavaScript](https://img.shields.io/badge/JavaScript-ES2020+-F7DF1E?logo=javascript&logoColor=111)
+![Node.js](https://img.shields.io/badge/Node.js-Backend-339933?logo=nodedotjs&logoColor=white)
+![PostgreSQL](https://img.shields.io/badge/Neon-PostgreSQL-4169E1?logo=postgresql&logoColor=white)
+![Netlify](https://img.shields.io/badge/Netlify-Functions-00C7B7?logo=netlify&logoColor=white)
+![Status](https://img.shields.io/badge/Status-V2_Showcase-128071)
 
-**[Watch / download the 46-second showcase](media/pressflow-v2-showcase.mp4)** ·
-[Download raw MP4](https://raw.githubusercontent.com/M-Bilal-Sidd/PressFlow-Showcase/main/media/pressflow-v2-showcase.mp4) ·
-[Sample A4 invoice](media/sample-invoice.pdf)
+[🎬 Watch the Showcase](media/pressflow-v2-showcase.mp4) · [📄 Sample Invoice](media/sample-invoice.pdf) · [🏗️ Architecture](ARCHITECTURE.md)
 
-PressFlow brings print-business quotations, confirmed orders, partial deliveries,
-sales invoices and dated payments into a focused, mobile-friendly workspace.
+</div>
 
-## The workflow
+---
 
-1. **Quote:** capture customer, product, quantity and rate details.
-2. **Confirm:** move an accepted quotation into an order.
-3. **Deliver:** issue partial or full delivery challans and confirm receipt.
-4. **Invoice:** bill exact delivered quantities against their source challans.
-5. **Record payment:** retain dated receipts and traceable corrections.
+![PressFlow product overview](media/poster.png)
 
-![Actual demo order desk](media/showcase-preview.png)
+## 💡 Overview
 
-## Engineering highlights
+PressFlow is a purpose-built workspace for the everyday operations of a printing
+business. It connects quotations, confirmed orders, partial deliveries, delivery-linked
+invoices and payment records—without losing the history behind each document.
 
-- Responsive desktop/mobile UI, light/dark themes and A4 print layouts.
-- Separate delivery, invoicing and payment status.
-- Fixed-decimal helpers for financial calculations and immutable document snapshots.
-- Cloud path: same-origin Netlify Functions with Neon PostgreSQL.
-- Independent Owner/Tester passwords, server sessions and protected business endpoints.
-- Revision-based writes and request receipts to detect stale updates and reconcile
-  uncertain acknowledgements.
-- Encrypted browser-local mode exists separately; cloud mode has no silent local fallback.
+The focus is practical: **clear next actions, accurate quantities, traceable payments
+and professional A4 output**, on desktop and mobile.
 
-Read the [architecture](ARCHITECTURE.md) and [media notes](MEDIA-NOTES.md).
+## 🎬 Product Showcase
 
-## Screenshots
+[![Watch PressFlow in action](media/showcase-preview.png)](https://raw.githubusercontent.com/M-Bilal-Sidd/PressFlow-Showcase/main/media/pressflow-v2-showcase.mp4)
 
-| Quotation | Partial delivery |
+**[▶ Watch / download the 46-second video](https://raw.githubusercontent.com/M-Bilal-Sidd/PressFlow-Showcase/main/media/pressflow-v2-showcase.mp4)**
+
+1080p · original instrumental soundtrack · actual demo interface · fictional records
+
+## ✨ Key Features
+
+| Feature | What it brings to the workflow |
 | --- | --- |
-| ![Quotation entry](media/quotation.png) | ![Partial dispatch](media/partial-delivery.png) |
+| 📋 Order desk | Search, status filters, outstanding invoices and clear next actions |
+| 📝 Quotations & orders | Capture quantities and rates, then confirm accepted work |
+| 🚚 Partial deliveries | Dispatch in stages with separately numbered delivery challans |
+| 🧾 Delivery-linked invoicing | Allocate exact completed-delivery quantities without reusing them |
+| 💳 Payment history | Dated receipts, references and explicit, traceable corrections |
+| 📄 A4 documents | Quotations, challans and invoices with preserved issuance snapshots |
+| 📱 Responsive interface | Touch-friendly navigation and light/dark themes |
+| 🔐 Protected cloud book | Independent Owner/Tester sign-in with server-checked sessions |
+| 🛡️ Safer updates | Revision checks and request receipts for stale or uncertain saves |
 
-| Sales invoice | Payment history |
+## 🔄 Business Workflow
+
+```mermaid
+flowchart LR
+  Q["📝 Quotation"] --> O["✅ Confirmed order"]
+  O --> D["🚚 Partial / full delivery"]
+  D --> I["🧾 Sales invoice"]
+  I --> P["💳 Payment record"]
+```
+
+Delivery, invoicing and payment progress remain **independent**. A later receipt does
+not silently rewrite the financial snapshot of an already-issued invoice.
+
+## 🛠️ Tech Stack
+
+| Layer | Technologies |
 | --- | --- |
-| ![Delivered-quantity invoicing](media/invoice.png) | ![Dated receipt](media/payment-history.png) |
+| Frontend | JavaScript, HTML5, CSS3, responsive layouts |
+| Backend | Node.js, same-origin Netlify Functions |
+| Cloud database | Neon PostgreSQL, restricted application role |
+| Authentication | Password hashing, server sessions, server-side authorization |
+| Data integrity | Shared validators, decimal helpers, revision checks, request receipts |
+| Separate local mode | Encrypted browser-local vault |
+| Documents | Browser-based A4 print / PDF layouts |
 
-<img src="media/mobile-dark.png" alt="Mobile dark theme, fictional demo data" width="300">
+Explore the [architecture and engineering decisions](ARCHITECTURE.md).
 
-## Scope and privacy
+## 📸 Interface Gallery
 
-This is a **sanitized portfolio repository**, not the production application source.
-All captured records are fictional, generated in an isolated local demo.
-No private customer data, credentials, database URLs, application configuration,
-backups or private Git history are included.
+### Order Desk
+![Order dashboard with fictional records](media/dashboard.png)
 
-V2 remains a product showcase, **not production certification**. Device, printer and
-backup/restore acceptance are separate release gates. Cloud mode requires internet.
-The sync label reports the last confirmed save/load; automatic live refresh is not claimed.
-No public business-book login or hosted business endpoint is linked here.
+| 📝 Quotation | ✅ Confirmed Order |
+| --- | --- |
+| ![Quotation](media/quotation.png) | ![Confirmed order](media/confirmed-order.png) |
+
+| 🚚 Partial Delivery | 🧾 Sales Invoice |
+| --- | --- |
+| ![Partial delivery](media/partial-delivery.png) | ![Sales invoice](media/invoice.png) |
+
+| 💳 Payment History | 📄 A4 Invoice |
+| --- | --- |
+| ![Payment history](media/payment-history.png) | ![A4 document](media/a4-invoice.png) |
+
+### 📱 Mobile · Dark Theme
+<p align="center"><img src="media/mobile-dark.png" alt="Mobile dark theme with fictional demo records" width="300"></p>
+
+## 🧠 Engineering Focus
+
+- **Quantity integrity:** pending dispatches reserve quantities; only completed
+  deliveries can be invoiced.
+- **Financial history:** fixed-decimal helpers and immutable issued-document snapshots.
+- **Reliable writes:** revision conflicts prevent stale overwrites; request receipts
+  help reconcile acknowledgements lost after a commit.
+- **Explicit storage modes:** the encrypted local vault is separate from cloud mode,
+  not an offline cloud queue.
+
+## 📌 Project Scope
+
+This repository is a **public product case study and media showcase**. The private
+application source and deployment configuration are not distributed here.
+All displayed business records are fictional. The showcase is not a production-release
+certification; device, print and recovery acceptance remain separate.
+
+Cloud mode requires internet. Its status label reports the last confirmed save/load;
+automatic live refresh is not claimed.
+
+---
+
+<div align="center">
+
+**Built around the workflow. Designed & developed by MBS.**
+
+[GitHub Profile](https://github.com/M-Bilal-Sidd) · [Explore the Architecture](ARCHITECTURE.md)
+
+</div>
